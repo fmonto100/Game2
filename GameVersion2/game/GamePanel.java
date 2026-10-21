@@ -10,12 +10,14 @@ import javax.swing.JPanel;
 public class GamePanel extends JPanel implements Runnable {
 	Block block;
 	Ball ball;
+	Dimension dim;
 	
 	public GamePanel(Dimension dim) {
 		this.setBackground(Color.black);
 		this.setSize(dim);
-		ball = new Ball("Ball1", 100,100,3,1,50,Color.red);
-		block = new Block("Block1", 400,100,5,1,100,Color.blue);
+		ball = new Ball("Ball1", 100,100,5,1,50,Color.red);
+		block = new Block("Block1", 400,100,3,1,100,Color.blue);
+		this.setIgnoreRepaint(true);
 		
 	}
 	

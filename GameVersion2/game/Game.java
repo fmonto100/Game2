@@ -6,9 +6,9 @@ import javax.swing.JFrame;
 
 public class Game {
 	protected JFrame window;
-	Dimension dim;
-	GamePanel gamePanel;
-	Thread gameLoop;
+	protected Dimension dim;
+	protected GamePanel gamePanel;
+	protected Thread gameLoop;
 	
 	public Game() {
 		window = new JFrame("My Game");
@@ -22,8 +22,8 @@ public class Game {
 	}
 	
 	public void run() {
-		window.setVisible(true);
 		gameLoop = new Thread(this.gamePanel);
+		window.setVisible(true);
 		gameLoop.start();
 	}
 	
